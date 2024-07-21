@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <!-- Encabezado con logo animado alineado a la izquierda -->
+        <header>
+            <img src="/img/Logo.png" alt="Logo" class="logo logo-animated">
+        </header>
+        
+        <main>
+            <!-- Sección de entrada de texto -->
+            <section class="seccion-entrada">
+                <textarea id="textoEntrada" class="rotating-border" placeholder="Ingrese el texto aquí"></textarea>
+                <!-- Mensaje de instrucción con ícono -->
+                <div class="instruccion">
+                    <img src="/img/excla.png" alt="Exclamación" class="icono-exclamacion">
+                    <p>Solo letras minúsculas y sin acentos</p>
+                </div>
+                <!-- Botones de acción -->
+                <div class="botones">
+                    <button id="botonEncriptar" class="boton-accion rotating-border">Encriptar</button>
+                    <button id="botonDesencriptar" class="boton-accion rotating-border">Desencriptar</button>
+                </div>
+            </section>
+            
+            <!-- Sección de salida de texto -->
+            <section class="seccion-salida">
+                <div id="contenedorResultado">
+                    <img id="imagenMuneco" src="/img/Muñeco.png" alt="Muñeco">
+                    <p id="textoSinMensaje">Ningún mensaje fue encontrado</p>
+                    <p id="textoInstruccion">Ingresa el texto que deseas encriptar o desencriptar.</p>
+                </div>
+                <textarea id="textoSalida" readonly></textarea>
+                <button id="botonCopiar" class="boton-accion rotating-border">Copiar</button>
+            </section>
+        </main>
+        <!-- Pie de página con información del autor y animación de desintegración/regeneración -->
+        <footer class="footer-animated">
+            <p>Miguel Gerardo Rivera Hernandez 2024</p>
+        </footer>        
+    </div>
+    
+    <!-- Enlace al archivo JavaScript -->
+    <script src="aplicacion.js"></script>
+</body>
+</html>

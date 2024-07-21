@@ -1,0 +1,343 @@
+/* Importar la fuente Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Animación de desintegración y regeneración para el footer */
+@keyframes disintegrate {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Animación de destello */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Animación de crecimiento y encogimiento */
+@keyframes growShrink {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* pixelate-blur Versión alternativa usando desenfoque para mejor compatibilidad con navegadores */
+@keyframes pixelate-blur {
+    0% {
+      filter: blur(20px);    /* Estado inicial: desenfoque máximo */
+    }
+    50% {
+      filter: blur(10px);    /* A la mitad de la animación: reducción del desenfoque */
+    }
+    75% {
+      filter: blur(5px);    /* Al 75% de la animación: desenfoque más suave */
+    }
+    100% {
+      filter: blur(0);  /* Estado final: imagen clara sin desenfoque */
+    }
+  }
+
+  /* Keyframes para la animación de rotación */
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Definición de la animación de brillo giratorio */
+@keyframes brilloGiratorio {
+    /* Estado inicial y final: brillo en los cuatro lados */
+    0%, 100% {
+      box-shadow: 5px 0 15px #ffffff,  /* Derecha */
+                  0 5px 15px #ffffff,  /* Abajo */
+                  -5px 0 15px #ffffff, /* Izquierda */
+                  0 -5px 15px #ffffff; /* Arriba */
+    }
+    /* 25%: el brillo gira 90 grados en sentido horario */
+    25% {
+      box-shadow: 0 5px 15px #ffffff,  /* Abajo */
+                  -5px 0 15px #ffffff, /* Izquierda */
+                  0 -5px 15px #ffffff, /* Arriba */
+                  5px 0 15px #ffffff;  /* Derecha */
+    }
+    /* 50%: el brillo gira 180 grados */
+    50% {
+      box-shadow: -5px 0 15px #ffffff, /* Izquierda */
+                  0 -5px 15px #ffffff, /* Arriba */
+                  5px 0 15px #ffffff,  /* Derecha */
+                  0 5px 15px #ffffff;  /* Abajo */
+    }
+    /* 75%: el brillo gira 270 grados */
+    75% {
+      box-shadow: 0 -5px 15px #ffffff, /* Arriba */
+                  5px 0 15px #ffffff,  /* Derecha */
+                  0 5px 15px #ffffff,  /* Abajo */
+                  -5px 0 15px #ffffff; /* Izquierda */
+    }
+  }
+
+/* Estilos generales */
+body {
+    background-image: url(/img/ende.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D3D3D3;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal */
+.contenedor {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+/* Estilos del encabezado y logo */
+header {
+    text-align: left;
+    margin-bottom: 5rem;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background-color:  #00CED1;
+    opacity: 80%;
+    border-radius: 1rem;
+    animation: brilloGiratorio 10s linear infinite; /* Aplicar brilloGiratoriola animación a los elementos deseados */
+   /*background-color: inherit; Asegurarse de que la animación no afecte el fondo o el color del texto */
+   /*color: inherit; Asegurarse de que la animación no afecte el fondo o el color del texto */
+}
+
+/* Disposición del contenido principal */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+
+
+/* Estilos para las secciones de entrada y salida */
+.seccion-entrada, .seccion-salida {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+/* Estilos para las áreas de texto */
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 1rem;
+    border: none;
+    border-radius: 24px;
+    background-color: #000033;
+    color: #ffffff;
+    resize: none;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px #ffffff;
+    font-family: 'Inter', sans-serif;
+    opacity: 60%;
+    animation: brilloGiratorio 10s linear infinite; /* Aplicar brilloGiratoriola animación a los elementos deseados */
+}
+
+#textoEntrada::placeholder {
+    font-size: 2rem;
+    color: #FFFFFF;    
+}
+
+/* Estilos para el mensaje de instrucción */
+.instruccion {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.icono-exclamacion {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    background-color: #00CED1;
+    border-radius: 1rem;
+    animation: blink 1s ease-in-out infinite;/*@keyframes blink*/
+    animation: brilloGiratorio 10s linear infinite; /* Aplicar brilloGiratoriola animación a los elementos deseados */
+}
+
+.instruccion p {
+    font-size: 0.8rem;
+    background-color: #000033;
+    border-radius: .2rem;
+    opacity: 60%;
+    color:#ffffff;
+    animation: brilloGiratorio 10s linear infinite; /* Aplicar brilloGiratoriola animación a los elementos deseados */
+}
+
+/* Estilos para el contenedor de botones */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* Estilos generales para los botones de acción */
+.boton-accion {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    background-color: #00BFFF;
+    color: #000000;
+    opacity: 55%;
+    width: 50%;
+    margin: 0.5rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    animation: brilloGiratorio 10s linear infinite;  /* Aplicar brilloGiratoriola animación a los elementos deseados */
+}
+
+#botonCopiar {
+    margin-top: 1rem;
+    align-self: center;
+}
+
+.boton-accion:hover {
+    background-color: #000033;
+    color: #ffffff;
+    animation: brilloGiratorio 10s linear infinite;  /* Aplicar brilloGiratoriola animación a los elementos deseados */
+}
+
+/* Estilos para botones deshabilitados */
+.boton-accion.deshabilitado {
+    background-color: #000033;
+    opacity: 50%;
+    color: #ffffff;
+    cursor: not-allowed;    
+}
+
+/* Estilos para el contenedor de resultados */
+#contenedorResultado {
+    background-color: #000033;
+    color: #ffffff;
+    border-radius: 24px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    opacity: 70%;
+    animation: brilloGiratorio 10s linear infinite; /* Aplicar la animación a los elementos deseados */
+}
+
+#imagenMuneco {
+    display: none;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: #000033;
+    opacity: 70%;
+    animation: blink 1.5s ease-in-out infinite; /*@keyframes blink*/
+}
+
+/* Estilos para el texto de no mensaje */
+#textoSinMensaje {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para el texto de instrucción */
+#textoInstruccion {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Ocultar inicialmente el área de texto de salida y el botón de copiar */
+#textoSalida, #botonCopiar {
+    display: none;
+}
+
+/* Estilos para el pie de página */
+footer {
+    text-align: center;
+    padding: 0.01rem;
+    background-color: #000033;
+    border-radius: 1rem;
+    color: #ffffff;
+    opacity: 55%;
+    margin-top: 2rem;
+}
+
+.footer-animated {
+/* Aplica la animación 'pixelate-blur' con duración de 2 segundos y efecto suave de entrada y salida */
+    animation: pixelate-blur 5s ease-in-out;
+    animation-iteration-count: infinite;/* Hace que la animación se repita infinitamente */
+    animation-direction: alternate;/* Alterna la dirección de la animación en cada iteración */
+}  
+
+/* Media query para tablets */
+@media (min-width: 768px) {
+    .logo {
+        width: 100px;
+    }
+
+    main {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .seccion-entrada, .seccion-salida {
+        width: 48%;
+    }
+
+    textarea {
+        height: 300px;
+    }
+
+    .botones {
+        flex-direction: row;
+    }
+
+    #imagenMuneco {
+        display: block;
+    }
+}
+
+/* Media query para PC */
+@media (min-width: 1024px) {
+    .logo {
+        width: 120px;
+    }
+
+    textarea {
+        height: 400px;
+        font-size: 1.2rem;
+    }
+
+    .instruccion p {
+        font-size: 1rem;
+    }
+
+    .boton-accion {
+        font-size: 1.1rem;
+    }
+
+    #textoSinMensaje {
+        font-size: 1.5rem;
+    }
+
+    #textoInstruccion {
+        font-size: 1.1rem;
+    }
+}

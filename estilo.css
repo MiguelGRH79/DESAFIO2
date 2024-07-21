@@ -173,7 +173,7 @@ textarea {
     background-color: #00CED1;
     border-radius: 1rem;
     animation: blink 1s ease-in-out infinite;/*@keyframes blink*/
-    animation: brilloGiratorio 10s linear infinite; /* Aplicar brilloGiratoriola animación a los elementos deseados */
+    /* animation: brilloGiratorio 10s linear infinite;Aplicar brilloGiratoriola animación a los elementos deseados */
 }
 
 .instruccion p {
